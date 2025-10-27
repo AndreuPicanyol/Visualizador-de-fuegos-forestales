@@ -92,7 +92,7 @@ def obtener_rango_fechas(df, columna_fecha="fecha"):
 # =====================================================
 # 🔥 Cargar datos
 # =====================================================
-df = pd.read_csv('./dat/fires-all.csv', encoding='UTF-8')
+df = pd.read_csv('./dat/fires-all.zip', encoding='UTF-8', compression = 'zip')
 df["fecha"] = pd.to_datetime(df["fecha"], errors="coerce")
 
 # Diccionario de causas
@@ -361,5 +361,6 @@ with tab5:
         st.plotly_chart(fig_rank, use_container_width=True)
     else:
         st.info("No hay datos para mostrar el ranking.")
+
 
 
